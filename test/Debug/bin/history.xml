@@ -1,13 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=test.map -O0 --gc-sections -LD:\CooCox\CoIDE\configuration\ProgramData\test -TD:\CooCox\CoIDE\configuration\ProgramData\test/arm-gcc-link.ld -g">
-      <target file="test.elf" lastModified="15bdda0edaa">
+      <target file="test.elf" lastModified="15bde3b32b2">
+         <source file="..\obj\stm32f4xx_syscfg.o" lastModified="15bde2becf1"/>
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="15bde2bed3f"/>
+         <source file="..\obj\stm32f4xx_pwr.o" lastModified="15bde2bed78"/>
+         <source file="..\obj\alarm.o" lastModified="15bde092fb9"/>
+         <source file="..\obj\stm32f4xx_dac.o" lastModified="15bde2bedb8"/>
          <source file="..\obj\startup_stm32f4xx.o" lastModified="15bdda08e6c"/>
-         <source file="..\obj\main.o" lastModified="15bdda0ebac"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15bdda08eea"/>
-         <source file="..\obj\init.o" lastModified="15bdda0ebdd"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15bdda08f50"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="15bdda08f88"/>
+         <source file="..\obj\movesensor.o" lastModified="15bde092fda"/>
+         <source file="..\obj\main.o" lastModified="15bde3b30ee"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15bde2bee4b"/>
+         <source file="..\obj\init.o" lastModified="15bde2bee86"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="15bde2beed9"/>
+         <source file="..\obj\alarm4.o" lastModified="15bde3aa53c"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15bde2bef18"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="15bde2bef4e"/>
+         <source file="..\obj\stm32f4xx_exti.o" lastModified="15bde2bef84"/>
+         <source file="..\obj\misc.o" lastModified="15bde2befb8"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="15bde2bf03d"/>
+         <source file="..\obj\magneticsensor.o" lastModified="15bde093224"/>
+         <source file="..\obj\usart.o" lastModified="15bde2bf072"/>
       </target>
    </processor>
 </history>
