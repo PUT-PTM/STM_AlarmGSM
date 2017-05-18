@@ -1,32 +1,38 @@
 #include "init.h"
 #include "usart.h"
-//TODO:
-//czujnik IR
-//kontaktron
-//glosnik
-//interfejs GSM
-//usart ->GSM
-//
-//interfejs do wszystkiego kurwa
-//
+#include "magneticsensor.h"
 
+/*
+ * ===TODO==============================================
+ * Czujnik IR - Dostosowac opoznienia/odswiezenie
+ * Kontaktron - Dokonczyc obsluge
+ * Audio - Zmienic dzwiek alarmu, Puszczac od nowa
+ * Zablokowac Alarm po wykryciu
+ * Interfejs GSM
+ * =====================================================
+*/
+
+unsigned int zmienna=0;
+extern const u8 rawAudio[123200];
+void TIM4_IRQHandler(void)
+{
+
+         	if(TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET)
+         	{
+
+         		DAC_SetChannel1Data(DAC_Align_12b_R, rawAudio[zmienna]);
+         		         	if(++zmienna>123199)zmienna=0;
+         		             TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+         	}
+}
 
 int main(void)
 {
 	SystemInit();
 	ustaw();
-
 	for(;;)
 	{
-		while(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)==1)
-		{
-				GPIO_SetBits(GPIOD, GPIO_Pin_12);
-				usart1();
-
-		}
-		GPIO_ResetBits(GPIOD, GPIO_Pin_12);
-
+		movesensor();
+		magneticsensor();
 	}
-
-
 }
