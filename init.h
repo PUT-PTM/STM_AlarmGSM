@@ -9,6 +9,11 @@
 #include "stm32f4xx_pwr.h"
 #include "stm32f4xx_syscfg.h"
 #include "misc.h"
-
-
+#include "tm_stm32f4_delay.h"
+#include "tm_stm32f4_timer_properties.h"
+#include "attributes.h"
+#include "defines.h"
+#include <stdbool.h>
 void ustaw();
+
+

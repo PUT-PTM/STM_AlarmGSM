@@ -1,4 +1,4 @@
-#include "init.h"
+#include "magneticsensor.h"
 int wyn=0;
 void magneticsensor()
 {

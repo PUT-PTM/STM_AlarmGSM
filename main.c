@@ -1,6 +1,4 @@
 #include "init.h"
-#include "usart.h"
-#include "magneticsensor.h"
 
 /*
  * ===TODO==============================================
@@ -12,7 +10,8 @@
  * =====================================================
 */
 
-unsigned int zmienna=0;
+// VARIABLES //
+unsigned int audio=0;
 extern const u8 rawAudio[123200];
 void TIM4_IRQHandler(void)
 {
@@ -20,8 +19,8 @@ void TIM4_IRQHandler(void)
          	if(TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET)
          	{
 
-         		DAC_SetChannel1Data(DAC_Align_12b_R, rawAudio[zmienna]);
-         		         	if(++zmienna>123199)zmienna=0;
+         		DAC_SetChannel1Data(DAC_Align_12b_R, rawAudio[audio]);
+         		         	if(++audio>123199)audio=0;
          		             TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
          	}
 }
@@ -30,9 +29,5 @@ int main(void)
 {
 	SystemInit();
 	ustaw();
-	for(;;)
-	{
-		movesensor();
-		magneticsensor();
-	}
+	alarmloop();
 }
