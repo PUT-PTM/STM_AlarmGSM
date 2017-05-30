@@ -1,3 +1,3 @@
 #include "init.h"
 
-void movesensor();
+bool movesensor();

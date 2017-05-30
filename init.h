@@ -14,7 +14,7 @@
 #include "attributes.h"
 #include "defines.h"
 #include <stdbool.h>
-void ustaw();
+void setup();
 void lighton(int number);
 void lightoff(int number);
 

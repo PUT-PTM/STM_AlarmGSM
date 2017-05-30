@@ -12,7 +12,7 @@
 
 // VARIABLES //
 unsigned int audio=0;
-extern const u8 rawAudio[123200];
+extern const u8 rawAudio[96078];
 void TIM4_IRQHandler(void)
 {
 
@@ -20,7 +20,7 @@ void TIM4_IRQHandler(void)
          	{
 
          		DAC_SetChannel1Data(DAC_Align_12b_R, rawAudio[audio]);
-         		         	if(++audio>123199)audio=0;
+         		         	if(++audio>96077)audio=0;
          		             TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
          	}
 }
@@ -28,6 +28,6 @@ void TIM4_IRQHandler(void)
 int main(void)
 {
 	SystemInit();
-	ustaw();
-	alarmloop();
+	setup(); //  GPIO, UART, ADC, EXTI, TIM, Delay
+	alarmloop(); // Main loop
 }

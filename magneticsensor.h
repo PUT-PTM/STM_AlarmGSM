@@ -1,2 +1,2 @@
 #include "init.h"
-void magneticsensor();
+bool magneticsensor();
