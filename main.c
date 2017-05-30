@@ -1,38 +1,16 @@
 #include "init.h"
-#include "usart.h"
-#include "magneticsensor.h"
 
 /*
  * ===TODO==============================================
- * Czujnik IR - Dostosowac opoznienia/odswiezenie
+ * Czujnik IR - Dostosowac opoznienia
  * Kontaktron - Dokonczyc obsluge
- * Audio - Zmienic dzwiek alarmu, Puszczac od nowa
- * Zablokowac Alarm po wykryciu
  * Interfejs GSM
  * =====================================================
 */
 
-unsigned int zmienna=0;
-extern const u8 rawAudio[123200];
-void TIM4_IRQHandler(void)
-{
-
-         	if(TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET)
-         	{
-
-         		DAC_SetChannel1Data(DAC_Align_12b_R, rawAudio[zmienna]);
-         		         	if(++zmienna>123199)zmienna=0;
-         		             TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
-         	}
-}
-
 int main(void)
 {
 	SystemInit();
-	ustaw();
-	for(;;)
-	{
-		movesensor();
-		magneticsensor();
-	}
+	setup(); //  GPIO, UART, ADC, EXTI, TIM, Delay
+	alarmloop(); // Main loop
 }
