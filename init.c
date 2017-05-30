@@ -12,10 +12,6 @@
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
-<<<<<<< HEAD
-=======
-
->>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 
 
 	//============ PIN ===============
@@ -70,11 +66,6 @@
 
 	//============ TIMER ===============
 
-<<<<<<< HEAD
-=======
-	//============ TIMER ===============
-
->>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure; // Audio
 	TIM_TimeBaseStructure.TIM_Period = 524;
 	TIM_TimeBaseStructure.TIM_Prescaler = 9;
@@ -89,10 +80,7 @@
 	TIM_TimeBaseStructure2.TIM_CounterMode =  TIM_CounterMode_Up;
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure2);
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 	//============ NVIC   ===============
 
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1); // Audio
@@ -117,10 +105,7 @@
 
 	//============ EXTI ===============
 	// Interrupt ON/OFF
-<<<<<<< HEAD
 
-=======
->>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 	NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x00;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x00;
@@ -135,14 +120,9 @@
 	//YSCFG_EXTILineConfig(GPIOB, EXTI_PinSource1);
 
 
-<<<<<<< HEAD
 	//============ ADC ===============
 	// Magnetic Sensor
-=======
->>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 
-	//============ ADC ===============
-	// Magnetic Sensor
 	ADC_CommonInitTypeDef ADC_CommonInitStructure;
 	ADC_CommonInitStructure.ADC_Mode = ADC_Mode_Independent;
 	ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div2;
@@ -164,10 +144,7 @@
 
 	//============ DAC ===============
 	// Audio
-<<<<<<< HEAD
 
-=======
->>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 	DAC_InitTypeDef DAC_InitStructure;
 	DAC_InitStructure.DAC_Trigger = DAC_Trigger_None;
 	DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_None;
@@ -194,7 +171,6 @@
 //	USART_Init(USART3, &USART_InitStructure);
 //	USART_Cmd(USART3, ENABLE);
 
-<<<<<<< HEAD
 
 	//============ DELAY ===============
 
@@ -202,13 +178,6 @@
 }
 
 
-=======
-	//============ DELAY ===============
-	TM_DELAY_Init();
-}
-
-
->>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 void lighton(int number)
 	{
 		switch(number)
