@@ -4,9 +4,9 @@ void movesensor()
 	while(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_0)==1)
 					{
 							TIM_Cmd(TIM4, ENABLE);
-							GPIO_SetBits(GPIOD, GPIO_Pin_12);
+							lighton(15);
 					}
-					GPIO_ResetBits(GPIOD, GPIO_Pin_12);
+					lightoff(15);
 					TIM_Cmd(TIM4, DISABLE);
 
 }

@@ -47,13 +47,13 @@
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOD, &GPIO_InitStructure);
 
-	// PB7 Przycisk ON/OFF
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;
+	// PA0 Przycisk ON/OFF
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
 
 	// PC10 PC11 Rx i Tx (USART) (10=TX,11=RX)
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11;
@@ -98,7 +98,7 @@
 	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
 	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
 	EXTI_Init(&EXTI_InitStructure);
-	SYSCFG_EXTILineConfig(GPIOA, EXTI_PinSource0);
+	//YSCFG_EXTILineConfig(GPIOB, EXTI_PinSource1);
 
 
 
@@ -156,4 +156,43 @@
 
 	//============ DELAY ===============
 	TM_DELAY_Init();
+}
+
+
+void lighton(int number)
+	{
+		switch(number)
+		{
+		case 12:
+			GPIO_SetBits(GPIOD, GPIO_Pin_12);
+			break;
+		case 13:
+			GPIO_SetBits(GPIOD, GPIO_Pin_13);
+			break;
+		case 14:
+			GPIO_SetBits(GPIOD, GPIO_Pin_14);
+			break;
+		case 15:
+			GPIO_SetBits(GPIOD, GPIO_Pin_15);
+			break;
+	}
+}
+
+void lightoff(int number)
+	{
+		switch(number)
+		{
+		case 12:
+			GPIO_ResetBits(GPIOD, GPIO_Pin_12);
+			break;
+		case 13:
+			GPIO_ResetBits(GPIOD, GPIO_Pin_13);
+			break;
+		case 14:
+			GPIO_ResetBits(GPIOD, GPIO_Pin_14);
+			break;
+		case 15:
+			GPIO_ResetBits(GPIOD, GPIO_Pin_15);
+			break;
+	}
 }

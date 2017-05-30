@@ -4,7 +4,8 @@ void EXTI0_IRQHandler(void)
 {
         if(EXTI_GetITStatus(EXTI_Line0) != RESET)
        	{
-         	GPIO_ToggleBits(GPIOD, GPIO_Pin_15);
+         	Power();
+         	Delayms(100);
          	EXTI_ClearITPendingBit(EXTI_Line0);
    	   	}
 }
@@ -12,23 +13,29 @@ void EXTI0_IRQHandler(void)
 
 void Power()
 {
-	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_7)==1) IsAlarmOn=false;
+	if(IsAlarmOn) IsAlarmOn=false;
 	else IsAlarmOn=true;
 }
+
 
 void alarmloop()
 {
 	for(;;)
 	{
-
-		while(IsAlarmOn)
+		if(IsAlarmOn)
 		{
+			Delayms(1500);
+			lightoff(14);
+			lighton(12);
 			movesensor();
-			//Delayms(500);
 			magneticsensor();
 		}
-		GPIO_ToggleBits(GPIOD, GPIO_Pin_14);
-		Delayms(500);
-
+		else
+		{
+			lightoff(12);
+			lighton(14);
+			Delayms(500);
+		}
 	}
 }
+

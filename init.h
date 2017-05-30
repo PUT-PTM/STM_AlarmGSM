@@ -15,5 +15,7 @@
 #include "defines.h"
 #include <stdbool.h>
 void ustaw();
+void lighton(int number);
+void lightoff(int number);
 
 
