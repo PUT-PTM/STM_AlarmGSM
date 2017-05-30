@@ -11,7 +11,7 @@
 * Hercules 3-2-8 (http://www.hw-group.com/products/hercules/)
 
 # How to run 
-- Assembly the kit and the modules as in scheme. For the proper usage of SIM modem, paid-for Nano SIM card is required. After activating the alarm with the attached button alarm will activate automatically after a short period of time. After detection by either of sensor, a set grace period is granted to deactivate the alarm with the button. If the button is not pressed  within grace period, the alarm will be set, and SMS notification will be sent.
+- Assembly the kit and the modules as in scheme. For the proper usage of SIM modem, paid-for Micro SIM card is required. After activating the alarm with the attached button alarm will activate automatically after a short period of time. After detection by either of sensor, a set grace period is granted to deactivate the alarm with the button. If the button is not pressed  within grace period, the alarm will be set, and SMS notification will be sent.
 
 # How to compile 
 
