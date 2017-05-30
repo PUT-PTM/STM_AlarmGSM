@@ -1,4 +1,5 @@
 #include "alarm.h"
+<<<<<<< HEAD
 
 void EXTI0_IRQHandler(void) // PA0 push button
 {
@@ -9,6 +10,20 @@ void EXTI0_IRQHandler(void) // PA0 push button
 			clockon=false;
 			alarmring = false; // Audio Off
         	counter=0; // Binary Counter
+=======
+int counter=0;
+int counter2=0;
+
+void EXTI0_IRQHandler(void)
+{
+        if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+       	{
+			TIM_Cmd(TIM3, DISABLE); // Counter
+			TIM_Cmd(TIM4, DISABLE);
+			clockon=false;
+			alarmring = false;
+        	counter=0;
+>>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 			lightoff(12);
 			lightoff(13);
 			lightoff(14);
@@ -23,6 +38,7 @@ void TIM3_IRQHandler(void)
 {
          	if(TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)
          	{
+<<<<<<< HEAD
          		binaryclock(counter);
          		if(++counter>8)counter=0;
                 TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
@@ -39,6 +55,14 @@ void TIM4_IRQHandler(void)
          		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
          	}
 }
+=======
+         		odliczanie(counter);
+         		if(++counter>8)counter=0;
+                	TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+         	}
+}
+
+>>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 
 void Power()
 {
@@ -46,17 +70,32 @@ void Power()
 	else IsAlarmOn=true;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 void alarmloop()
 {
 	for(;;)
 	{
+<<<<<<< HEAD
+=======
+		counter2 = TIM3->CNT;
+>>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 		if(IsAlarmOn)
 		{
 			if(clockon==false && alarmring==false)
 			{
+<<<<<<< HEAD
 				Delayms(1500);
 				GPIO_ToggleBits(GPIOD, GPIO_Pin_12);
 				lightoff(14);
+=======
+			Delayms(1500);
+			GPIO_ToggleBits(GPIOD, GPIO_Pin_12);
+			lightoff(14);
+>>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 			}
 			if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_0)==1 && clockon==false && alarmring==false)
 					{
@@ -75,6 +114,7 @@ void alarmloop()
 	}
 }
 
+<<<<<<< HEAD
 void binaryclock(int counter)
 {
 	switch(counter)
@@ -130,6 +170,65 @@ void binaryclock(int counter)
 				}break;
 		}
 }
+=======
+void odliczanie(int licznik)
+	{
+	switch(licznik)
+				{
+				case 0:
+					{
+						lightoff(12);
+						lightoff(13);
+						lightoff(14);
+						lightoff(15);
+					}break;
+				case 1:
+					{
+						lighton(12);
+					}break;
+				case 2:
+					{
+						lightoff(12);
+						lighton(13);
+					}break;
+				case 3:
+					{
+						lighton(12);
+					}break;
+				case 4:
+					{
+						lightoff(12);
+						lightoff(13);
+						lighton(14); //4 sec
+					}break;
+				case 5:
+					{
+						lighton(12);
+					}break;
+				case 6:
+					{
+						lightoff(12);
+						lighton(13);
+					}break;
+				case 7:
+					{
+						lighton(12);
+					}break;
+				case 8:
+					{
+						lightoff(12);
+						lightoff(13);
+						lightoff(14);
+						lighton(15);
+						TIM_Cmd(TIM3, DISABLE);
+						clockon=false;
+						alarm();
+					}break;
+
+				}
+
+	}
+>>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 
 void alarm()
 {
@@ -142,4 +241,8 @@ void alarm()
 	lightoff(15);
 	clockon=false;
 	TIM_Cmd(TIM4, ENABLE);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7c806cb2996f824becf1c0105395c851b71b2878
 }
