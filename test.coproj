@@ -32,7 +32,7 @@
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
         </MemoryAreas>
-        <LocateLinkFile path="../../configuration/programdata/test/arm-gcc-link.ld" type="0"/>
+        <LocateLinkFile path="d:/coocox/coide/configuration/programdata/test/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>
@@ -83,51 +83,53 @@
   </Components>
   <Files>
     <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
-    <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_usart.c" path="cmsis_lib/source/stm32f4xx_usart.c" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
-    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_pwr.c" path="cmsis_lib/source/stm32f4xx_pwr.c" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_dac.h" path="cmsis_lib/include/stm32f4xx_dac.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
-    <File name="cmsis_lib/source/magneticsensor.h" path="magneticsensor.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
-    <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_adc.h" path="cmsis_lib/include/stm32f4xx_adc.h" type="1"/>
+    <File name="cmsis_lib/source/attributes.h" path="F:/Pobierane/tm_stm32f4_delay/attributes.h" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
-    <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/source/init.h" path="init.h" type="1"/>
-    <File name="cmsis_lib/source/movesensor.h" path="movesensor.h" type="1"/>
-    <File name="cmsis_lib/source/movesensor.c" path="movesensor.c" type="1"/>
-    <File name="cmsis_lib/source/usart.c" path="usart.c" type="1"/>
+    <File name="cmsis_lib/source/tm_stm32f4_timer_properties.c" path="F:/Pobierane/tm_stm32f4_delay/tm_stm32f4_timer_properties.c" type="1"/>
     <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
-    <File name="cmsis" path="" type="2"/>
-    <File name="cmsis_lib/source/alarm.h" path="alarm.h" type="1"/>
+    <File name="cmsis_lib/source/usart.c" path="usart.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_adc.c" path="cmsis_lib/source/stm32f4xx_adc.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
-    <File name="cmsis_lib" path="" type="2"/>
-    <File name="cmsis_lib/source/magneticsensor.c" path="magneticsensor.c" type="1"/>
-    <File name="cmsis_lib/source/usart.h" path="usart.h" type="1"/>
     <File name="cmsis_lib/source" path="" type="2"/>
-    <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
-    <File name="cmsis_lib/source/audio.c" path="E:/Dysk Google/Studia/Semestr 3/PTMy/Wszystkie Laby/Bibliotekah/biblioteka orczyka/Kolokwium/Muzyka2/audio.c" type="1"/>
-    <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
+    <File name="cmsis_lib/source/defines.h" path="F:/Pobierane/defines/defines.h" type="1"/>
     <File name="cmsis_lib/source/init.c" path="init.c" type="1"/>
     <File name="cmsis_boot/stm32f4xx_conf.h" path="cmsis_boot/stm32f4xx_conf.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_dac.c" path="cmsis_lib/source/stm32f4xx_dac.c" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
-    <File name="cmsis_lib/include" path="" type="2"/>
     <File name="cmsis_lib/source/alarm.c" path="alarm.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_rcc.h" path="cmsis_lib/include/stm32f4xx_rcc.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_syscfg.c" path="cmsis_lib/source/stm32f4xx_syscfg.c" type="1"/>
-    <File name="main.c" path="main.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_pwr.h" path="cmsis_lib/include/stm32f4xx_pwr.h" type="1"/>
+    <File name="cmsis_lib/source/tm_stm32f4_timer_properties.h" path="F:/Pobierane/tm_stm32f4_delay/tm_stm32f4_timer_properties.h" type="1"/>
+    <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
+    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_pwr.c" path="cmsis_lib/source/stm32f4xx_pwr.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_adc.h" path="cmsis_lib/include/stm32f4xx_adc.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
+    <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
+    <File name="cmsis_lib/source/tm_stm32f4_delay.c" path="F:/Pobierane/tm_stm32f4_delay/tm_stm32f4_delay.c" type="1"/>
+    <File name="cmsis" path="" type="2"/>
+    <File name="cmsis_lib/source/alarm.h" path="alarm.h" type="1"/>
+    <File name="cmsis_lib/source/tm_stm32f4_delay.h" path="F:/Pobierane/tm_stm32f4_delay/tm_stm32f4_delay.h" type="1"/>
+    <File name="cmsis_lib" path="" type="2"/>
+    <File name="cmsis_lib/source/usart.h" path="usart.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
+    <File name="cmsis_lib/source/audio.c" path="../../Studia/Semestr 3/PTMy/Wszystkie Laby/Bibliotekah/biblioteka orczyka/Kolokwium/Muzyka2/audio.c" type="1"/>
+    <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
+    <File name="cmsis_lib/include" path="" type="2"/>
+    <File name="main.c" path="main.c" type="1"/>
   </Files>
 </Project>
