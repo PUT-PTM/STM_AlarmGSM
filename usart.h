@@ -5,6 +5,7 @@
 #include "stm32f4xx_usart.h"
 #include "stm32f4xx_tim.h"
 
+char c;
 
-uint8_t usartGetChar(void);
-void USART3_IRQHandler(void);
+void send_char(char c);
+void send_string(const char* s);
